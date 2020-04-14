@@ -5,8 +5,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fair Trade Coffee</title>
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="style.css">
+<!--    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">-->
+<!--    <link rel="stylesheet" type="text/css" href="style.css">-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        button {
+            margin: 0 5px;
+        }
+        .button-group {
+            padding: 5px;
+        }
+    </style>
 </head>
 
 <body>
@@ -14,92 +25,120 @@
         <h1 style="text-align: center;">Fair Trade Coffee</h1>
         <hr>
         <p style="text-align: center;">Prove the authenticity of coffee using the Ethereum blockchain.</p>
-    </div>
-
-    <div id="ftc-harvest">
-        <h2>Product Overview</h2>
-        <div class="form-group">
-            <label for="sku">SKU</label>
-            <br>
-            <input class="input-field" type="number" id="sku" name="sku" value=1><br>
-            <label for="upc">UPC</label>
-            <br>
-            <input type="number" id="upc" name="upc" value=1><br>
-            <label for="ownerID">Current Owner ID</label>
-            <br>
-            <input type="text" id="ownerID" name="ownerID" value="0x963865f57804b38459dd4b2da2f760211a200438" size="50"><br>
-            <div class=button-div>
-                <button class="btn-fetchOne" id="button-fetch-data-1" type="button" data-id="9">Fetch Data 1</button>
-                <button class="btn-fetchTwo" id="button-fetch-data-2" type="button" data-id="10">Fetch Data 2</button>
+        <div class="row button-group">
+            <div class="col-md-12">
+                <div class="text-center">
+                    <button class="btn btn-primary" id="setup" onclick="App.setupAccounts()">
+                        <i class="fa fa-magic"></i> Setup Accounts
+                    </button>
+                    <button class="btn btn-warning" id="button-fetch-data-1" onclick="App.fetchItemBufferOne()">
+                        <i class="fa fa-bars"></i> Fetch Data 1
+                    </button>
+                    <button class="btn btn-warning" id="button-fetch-data-2" onclick="App.fetchItemBufferTwo()">
+                        <i class="fa fa-bars"></i> Fetch Data 2
+                    </button>
+                </div>
             </div>
         </div>
-        <div class=form-break></div>
-        <h2>Farm Details</h2>
-        <div class="form-group">
-            <label for="originFarmerID">Farmer ID</label>
-            <br>
-            <input type="text" id="originFarmerID" name="originFarmerID" value="0x99c289eb2aacec289631a5ddf62cf27a63d4494f"
-                size="50"><br>
-            <label for="originFarmName">Farm Name</label>
-            <br>
-            <input type="text" id="originFarmName" name="originFarmName" value="John Doe"><br>
-            <label for="originFarmInformation">Farm Information</label>
-            <br>
-            <input type="text" id="originFarmInformation" name="originFarmInformation" value="Yarra Valley"><br>
-            <label for="originFarmLatitude">Farm Latitude</label>
-            <br>
-            <input type="text" id="originFarmLatitude" name="originFarmLatitude" value="-38.239770"><br>
-            <label for="originFarmLongitude">Farm Longitude</label>
-            <br>
-            <input type="text" id="originFarmLongitude" name="originFarmLongitude" value="144.341490"><br>
-            <br>
-            <button class="btn-harvest" id="button-harvest" type="button" data-id="1">Harvest</button>
-            <button class="btn-process" id="button-process" type="button" data-id="2">Process</button>
-            <button class="btn-pack" id="button-pack" type="button" data-id="3">Pack</button>
-            <button class="btn-forsale" id="button-forsale" type="button" data-id="4">ForSale</button>
+        <div class="row button-group">
+            <div class="col-md-6">
+                <div class="pull-right">
+                    <button class="btn btn-info" id="button-harvest" onclick="App.harvestItem()">
+                        <i class="fa fa-snowflake-o"></i> Harvest
+                    </button>
+                    <button class="btn btn-info" id="button-process" onclick="App.processItem()">
+                        <i class="fa fa-spinner"></i> Process
+                    </button>
+                    <button class="btn btn-info" id="button-pack" onclick="App.packItem()">
+                        <i class="fa fa-archive"></i> Pack
+                    </button>
+                    <button class="btn btn-info" id="button-forsale" onclick="App.sellItem()">
+                        <i class="fa fa-star"></i> ForSale
+                    </button>
+                </div>
+            </div>
+<!--        </div>-->
+<!--        <div class="row button-group">-->
+            <div class="col-md-6">
+                <div class="pull-left">
+                    <button class="btn btn-success" id="button-buy" onclick="App.buyItem()">
+                        <i class="fa fa-shopping-cart"></i> Buy
+                    </button>
+                    <button class="btn btn-success" id="button-ship" onclick="App.shipItem()">
+                        <i class="fa fa-car"></i> Ship
+                    </button>
+                    <button class="btn btn-success" id="button-receive" onclick="App.receiveItem()">
+                        <i class="fa fa-handshake-o"></i> Receive
+                    </button>
+                    <button class="btn btn-success" id="button-purchase" onclick="App.purchaseItem()">
+                        <i class="fa fa-money"></i> Purchase
+                    </button>
+                </div>
+            </div>
         </div>
-        <div class=form-break></div>
-        <h2>Product Details</h2>
-        <div class="form-group">
-            <label for="productNotes">Product Notes</label>
-            <br>
-            <input type="text" id="productNotes" name="productNotes" value="Best beans for Espresso" size="60"><br>
-            <label for="productPrice">Product Price</label>
-            <br>
-            <input type="number" id="productPrice" name="productPrice" value=1>ETH<br>
-            <label for="distributorID">Distributor ID</label>
-            <br>
-            <input type="text" id="distributorID" name="distributorID" value="0xf1b1bcd24dad92303dd9fe78be639f7bcf9c238d"
-                size="50">
-            <br>
-            <label for="retailerID">Retailer ID</label>
-            <br>
-            <input type="text" id="retailerID" name="retailerID" value="0x0fb2bfefd526966c87efa19f6693d50971763fc2"
-                size="50"><br>
-            <label for="consumerID">Distributor ID</label>
-            <br>
-            <input type="text" id="consumerID" name="consumerID" value="0x5d777e9127b28fb119e81a6304278a0a21bef1c4"
-                size="50"><br>
-            <br>
-            <button class="btn-buy" id="button-buy" type="button" data-id="5">Buy</button>
-            <button class="btn-ship" id="button-ship" type="button" data-id="6">Ship</button>
-            <button class="btn-receive" id="button-receive" type="button" data-id="7">Receive</button>
-            <button class="btn-purchase" id="button-purchase" type="button" data-id="8">Purchase</button>
-        </div>
-        <div class=form-break></div>
-        <hr>
     </div>
 
-    <h2>Transaction History<span id="ftc-history"></span></h2>
-    <div>
-        <ul id="ftc-events">
-            <!-- Events will appear here from app.js -->
-        </ul>
-        <br>
-        <hr>
+    <div class="container">
+        <div class="row">
+            <div id="ftc-harvest" class="col-md-6">
+                <form>
+                    <h2>Product Overview</h2>
+                    <hr>
+                    <div class="form-group">
+                        <label for="sku">SKU</label>
+                        <input class="form-control" type="number" id="sku" name="sku" value="App.sku" disabled><br>
+                        <label for="upc">UPC</label>
+                        <input class="form-control" type="number" id="upc" name="upc" value="App.upc"><br>
+                        <label for="ownerID">Current Owner ID</label>
+                        <input class="form-control" type="text" id="ownerID" name="ownerID" value="App.ownerId"><br>
+                    </div>
+                    <div class=form-break></div>
+                    <h2>Farm Details</h2>
+                    <hr>
+                    <div class="form-group">
+                        <label for="originFarmerID">Farmer ID</label>
+                        <input class="form-control" type="text" id="originFarmerID" name="originFarmerID" value="App.originFarmerID"><br>
+                        <label for="originFarmName">Farm Name</label>
+                        <input class="form-control" type="text" id="originFarmName" name="originFarmName" value="App.originFarmerID"><br>
+                        <label for="originFarmInformation">Farm Information</label>
+                        <input class="form-control" type="text" id="originFarmInformation" name="originFarmInformation" value="App.originFarmInformation"><br>
+                        <label for="originFarmLatitude">Farm Latitude</label>
+                        <input class="form-control" type="text" id="originFarmLatitude" name="originFarmLatitude" value="App.originFarmLatitude"><br>
+                        <label for="originFarmLongitude">Farm Longitude</label>
+                        <input class="form-control" type="text" id="originFarmLongitude" name="originFarmLongitude" value="App.originFarmLongitude"><br>
+                    </div>
+                    <div class=form-break></div>
+                    <h2>Product Details</h2>
+                    <hr>
+                    <div class="form-group">
+                        <label for="productNotes">Product Notes</label>
+                        <input class="form-control" type="text" id="productNotes" name="productNotes" value="App.productNotes">
+                        <label for="productPrice">Product Price (ETH)</label>
+                        <input class="form-control" type="number" id="productPrice" name="productPrice" value="App.productPrice">
+                        <label for="distributorID">Distributor ID</label>
+                        <input class="form-control" type="text" id="distributorID" name="distributorID" value="App.distributorID">
+                        <label for="retailerID">Retailer ID</label>
+                        <input class="form-control" type="text" id="retailerID" name="retailerID" value="App.retailerID">
+                        <label for="consumerID">Distributor ID</label>
+                        <input class="form-control" type="text" id="consumerID" name="consumerID" value="App.consumerID">
+                    </div>
+                    <div class=form-break></div>
+                </form>
+            </div>
+
+            <div class="col-md-6">
+                <h2>Transaction History<span id="ftc-history"></span></h2>
+                <hr>
+                <ul id="ftc-events">
+                    <!-- Events will appear here from app.js -->
+                </ul>
+                <br>
+            </div>
+        </div>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <!-- <script src="js/web3.min.js"></script> -->
     <script src="js/truffle-contract.js"></script>
     <script src="js/app.js"></script>
