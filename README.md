@@ -107,17 +107,17 @@ Contract address: [0x56c40A90F26e4611D903a54501Ea32e711731e34](https://rinkeby.e
 ```
     Deploying 'SupplyChain'
     -----------------------
-    > transaction hash:    0xed7eee77a62bdf758e3bcb2d1357f483cda2479bd17f8cfa1e13435daa00962d
+    > transaction hash:    0x1f8708c0902bcf214f451bad46bc1c0068eccb0c0a54083e9f7403abb22aa32f
     > Blocks: 0            Seconds: 8
-    > contract address:    0x56c40A90F26e4611D903a54501Ea32e711731e34
-    > block number:        6303451
-    > block timestamp:     1586707019
+    > contract address:    0xfB46f070d98E8aAcd9E697e0a94C7e82d48a39EA
+    > block number:        6314516
+    > block timestamp:     1586873006
     > account:             0x327Cf41edC0eb2c516793F1901E2F46AF824C795
-    > balance:             21.662110058
-    > gas used:            2403235
+    > balance:             21.620309878
+    > gas used:            2660755
     > gas price:           10 gwei
     > value sent:          0 ETH
-    > total cost:          0.02403235 ETH
+    > total cost:          0.02660755 ETH
 ```
 
 Supporting contracts:
@@ -126,13 +126,13 @@ FarmerRole:
 ```
     Deploying 'FarmerRole'
     ----------------------
-    > transaction hash:    0x93802e478d8e035d4148fffaa712428c642f8d369d28914118af1ce9326744c5
-    > Blocks: 0            Seconds: 12
-    > contract address:    0x40D78138b83D7599bb0c3225ADB871E5B795EDf5
-    > block number:        6303447
-    > block timestamp:     1586706959
+    > transaction hash:    0x67a0bd39ad68eeb18b185b5c4292c1e889baf001014c35f21e638c598af49895
+    > Blocks: 1            Seconds: 8
+    > contract address:    0x3eD50bE0261C60CCC4a5f6cCeaA472eaD2d8b8B4
+    > block number:        6314512
+    > block timestamp:     1586872946
     > account:             0x327Cf41edC0eb2c516793F1901E2F46AF824C795
-    > balance:             21.695324688
+    > balance:             21.656099708
     > gas used:            306084
     > gas price:           10 gwei
     > value sent:          0 ETH
@@ -143,13 +143,13 @@ DistributorRole:
 ```
     Deploying 'DistributorRole'
     ---------------------------
-    > transaction hash:    0x3c453e4b6915564bd2d97ebc03dadd258bb2ad27dab848aa112ce5ad6613581f
+    > transaction hash:    0x025f25c498ea9f37e9fdbf64dc354ce43a4d71a12e8541d6442ddc827a797a7d
     > Blocks: 0            Seconds: 8
-    > contract address:    0xe043a26847d79F2F6B954ba9ff33eAFFbf43026b
-    > block number:        6303448
-    > block timestamp:     1586706974
+    > contract address:    0xF4A4b7d2879aF747eC04A3719EBC7E295Fc2Ce14
+    > block number:        6314513
+    > block timestamp:     1586872961
     > account:             0x327Cf41edC0eb2c516793F1901E2F46AF824C795
-    > balance:             21.692263968
+    > balance:             21.653038988
     > gas used:            306072
     > gas price:           10 gwei
     > value sent:          0 ETH
@@ -160,13 +160,13 @@ RetailerRole:
 ```
     Deploying 'RetailerRole'
     ------------------------
-    > transaction hash:    0xcc37d91b447f3834590fbff0d191909ed5de80355d099d34887aa754a7f7ff9e
+    > transaction hash:    0x416b3b738bdfdaa4ec6e400fad5bb61a51841e71224cc0dee6b27a4060aff122
     > Blocks: 0            Seconds: 8
-    > contract address:    0xa9F77d63eE47710560F3114F242c192555155583
-    > block number:        6303449
-    > block timestamp:     1586706989
+    > contract address:    0xA0883793728efC5A228Bf0Ab111461Dda9846d5F
+    > block number:        6314514
+    > block timestamp:     1586872976
     > account:             0x327Cf41edC0eb2c516793F1901E2F46AF824C795
-    > balance:             21.689203128
+    > balance:             21.649978148
     > gas used:            306084
     > gas price:           10 gwei
     > value sent:          0 ETH
@@ -177,13 +177,13 @@ ConsumerRole:
 ```
     Deploying 'ConsumerRole'
     ------------------------
-    > transaction hash:    0xe65fb67011b1bf26ce680914fd8aa4113e18e64a4e6f99051c12d8daf7f801ad
+    > transaction hash:    0x3a7f2b9312c3c681d34fe100dcbf28b90cb74b5992ef281db942f62dc3882573
     > Blocks: 0            Seconds: 8
-    > contract address:    0x57598B7305ea1B2FF0613f86d302989C9ddA349E
-    > block number:        6303450
-    > block timestamp:     1586707004
+    > contract address:    0xBA7ef6Ba0EB0C9514ae46e23E5f6Ee7A8001CC8D
+    > block number:        6314515
+    > block timestamp:     1586872991
     > account:             0x327Cf41edC0eb2c516793F1901E2F46AF824C795
-    > balance:             21.686142408
+    > balance:             21.646917428
     > gas used:            306072
     > gas price:           10 gwei
     > value sent:          0 ETH
