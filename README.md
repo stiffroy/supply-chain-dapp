@@ -93,17 +93,15 @@ npm run dev
 ## Built With
 
 * [Ethereum](https://www.ethereum.org/) - Ethereum is a decentralized platform that runs smart contracts
-* [IPFS](https://ipfs.io/) - IPFS is the Distributed Web | A peer-to-peer hypermedia protocol
-to make the web faster, safer, and more open.
 * [Truffle Framework](http://truffleframework.com/) - Truffle is the most popular development framework for Ethereum with a mission to make your life a whole lot easier.
 
 
 ## Deployment details of Rinkeby
 Main smart contract (SupplyChain):
 
-Transaction ID: [0xed7eee77a62bdf758e3bcb2d1357f483cda2479bd17f8cfa1e13435daa00962d](https://rinkeby.etherscan.io/tx/0xed7eee77a62bdf758e3bcb2d1357f483cda2479bd17f8cfa1e13435daa00962d)
+Transaction ID: [0x1f8708c0902bcf214f451bad46bc1c0068eccb0c0a54083e9f7403abb22aa32f](https://rinkeby.etherscan.io/tx/0x1f8708c0902bcf214f451bad46bc1c0068eccb0c0a54083e9f7403abb22aa32f)
 
-Contract address: [0x56c40A90F26e4611D903a54501Ea32e711731e34](https://rinkeby.etherscan.io/address/0x56c40a90f26e4611d903a54501ea32e711731e34)
+Contract address: [0xfB46f070d98E8aAcd9E697e0a94C7e82d48a39EA](https://rinkeby.etherscan.io/address/0xfB46f070d98E8aAcd9E697e0a94C7e82d48a39EA)
 ```
     Deploying 'SupplyChain'
     -----------------------
@@ -193,6 +191,4 @@ ConsumerRole:
 ## Acknowledgments
 
 * Solidity
-* Ganache-cli
 * Truffle
-* IPFS
