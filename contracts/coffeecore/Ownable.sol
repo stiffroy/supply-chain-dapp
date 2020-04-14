@@ -1,13 +1,22 @@
 pragma solidity >=0.4.24 <0.7.0;
 
-import "../coffeebase/SupplyChain.sol";
+import "../coffeeaccesscontrol/ConsumerRole.sol";
+import "../coffeeaccesscontrol/DistributorRole.sol";
+import "../coffeeaccesscontrol/FarmerRole.sol";
+import "../coffeeaccesscontrol/RetailerRole.sol";
 
 /// Provides basic authorization control
-contract Ownable is SupplyChain {
+contract Ownable is ConsumerRole, DistributorRole, FarmerRole, RetailerRole {
     address private origOwner;
 
     // Define an Event
     event TransferOwnership(address indexed oldOwner, address indexed newOwner);
+
+    /// Define a function modifier 'onlyOwner'
+    modifier onlyOwner() {
+        require(isOwner());
+        _;
+    }
 
     /// Assign the contract to an owner
     constructor () internal {
@@ -20,18 +29,12 @@ contract Ownable is SupplyChain {
         return origOwner;
     }
 
-    /// Define a function modifier 'onlyOwner'
-    modifier onlyOwner() {
-        require(isOwner());
-        _;
-    }
-
     /// Check if the calling address is the owner of the contract
     function isOwner() public view returns (bool) {
         return msg.sender == origOwner;
     }
 
-    /// Define a function to renounce ownerhip
+    /// Define a function to renounce ownership
     function renounceOwnership() public onlyOwner {
         emit TransferOwnership(origOwner, address(0));
         origOwner = address(0);
